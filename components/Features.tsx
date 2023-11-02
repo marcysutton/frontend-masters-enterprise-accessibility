@@ -6,27 +6,27 @@ import {
 
 const features = [
   {
-    name: "Screen Readers",
+    name: "Minimum Accessible Products",
     icon: PuzzleIcon,
   },
   {
-    name: "Accessibility Debugging",
+    name: "What Makes an Accessible User Interface?",
     icon: () => <img src="/react.svg" height="24" width="24" />,
   },
   {
-    name: "Accessible HTML",
+    name: "Accessible Naming & Screen Reader Concerns",
     icon: CogIcon,
   },
   {
-    name: "ARIA",
+    name: "Accessibility in JS Apps",
     icon: LightningBoltIcon,
   },
   {
-    name: "Focus Management",
+    name: "Test Automation for Accessibility",
     icon: LightningBoltIcon,
   },
   {
-    name: "Visual Considerations",
+    name: "Organizational Skill-Building",
     icon: LightningBoltIcon,
   }
 ];

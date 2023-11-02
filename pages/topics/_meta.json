@@ -1,10 +1,10 @@
 {
   "index": "Home",
   "introduction": "Introduction",
-  "screen-readers": "Screen Readers",
-  "accessibility-debugging": "Debugging",
-  "accessible-HTML": "Accessible HTML",
-  "ARIA": "ARIA",
-  "focus-management": "Focus Management",
-  "visual-considerations": "Visual Considerations"
+  "mvps": "Minimum Viable Products",
+  "accessible-uis": "Accessible UIs",
+  "accessible-naming": "Accessible Naming & Screen Readers",
+  "a11y-in-js-apps": "Accessibility in JS Apps",
+  "test-automation": "Test Automation for Accessibility",
+  "org-skill-building": "Organizational Skill-Building"
 }

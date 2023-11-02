@@ -1,7 +1,7 @@
 const theme = {
-  docsRepositoryBase: "https://github.com/marcysutton/FEM-web-accessibility",
+  docsRepositoryBase: "https://github.com/marcysutton/FEM-enterprise-accessibility",
   project: {
-    link: "https://github.com/marcysutton/FEM-web-accessibility"
+    link: "https://github.com/marcysutton/FEM-enterprise-accessibility"
   },
   logo: () => (
     <>
@@ -13,7 +13,7 @@ const theme = {
         style={{ marginRight: "1em" }}
       />
       <h1>
-        Web Accessibility, V2
+        Enterprise Accessibility
       </h1>
     </>
   ),
@@ -41,12 +41,12 @@ const theme = {
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="description"
-          content="Website created for the FrontendMasters course on Web Accessibility by Marcy Sutton Todd"
+          content="Website created for the FrontendMasters course on Enterprise Accessibility by Marcy Sutton Todd"
         />
         <meta name="author" content="Marcy Sutton Todd" />
         <meta
           property="og:url"
-          content="https://web-accessibility.vercel.app/topics"
+          content="https://enterprise-accessibility.vercel.app/topics"
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
@@ -54,15 +54,15 @@ const theme = {
         <meta property="og:image:height" content="692" />
         <meta
           property="og:title"
-          content={`${props.title} | Web Accessibility`}
+          content={`${props.title} | Enterprise Accessibility`}
         />
         <meta
           property="og:description"
-          content="Website created for the FrontendMasters course on Web Accessibility by Marcy Sutton Todd"
+          content="Website created for the FrontendMasters course on Enterprise Accessibility by Marcy Sutton Todd"
         />
         <meta
           property="og:image"
-          content="https://web-accessibility.vercel.app/ogimage1.png"
+          content="https://enterprise-accessibility.vercel.app/ogimage1.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@marcysutton" />

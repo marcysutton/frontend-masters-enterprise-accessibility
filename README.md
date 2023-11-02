@@ -1,17 +1,17 @@
 
-# Web Accessibility, V2
+# Enterprise Accessibility
 
-This repo includes the public source code for the [course website](https://web-accessibility.vercel.app/) related to the [FrontendMasters workshop on Web Accessibility](https://frontendmasters.com/courses/web-accessibility-v2/).
+This repo includes the public source code for the [course website](https://web-accessibility.vercel.app/) related to the [FrontendMasters workshop on Enterprise Accessibility](https://frontendmasters.com/courses/enterprise-accessibility/).
 
 Topics:
 
 - Introduction
-- Screen Readers and Assistive Technologies
-- Accessibility Debugging
-- Accessible HTML
-- ARIA (Accessible Rich Internet Applications)
-- Focus Management
-- Visual Considerations
+- Minimum Accessible Products
+- What Makes an Accessible User Interface?
+- Accessible Naming and Screen Reader Concerns
+- Accessibility in JavaScript Apps
+- Test Automation for Accessibility
+- Organizational Skill-Building
 - Wrap-Up
 
 Note: These slides are based on the [JavaScript Patterns repo](https://github.com/lydiahallie/javascript-react-patterns) from Lydia Hallie.
