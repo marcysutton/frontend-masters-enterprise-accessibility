@@ -3,7 +3,7 @@
   "introduction": "Introduction",
   "mvps": "Minimum Viable Products",
   "accessible-uis": "Accessible UIs",
-  "accessible-naming": "Accessible Naming & Screen Readers",
+  "accessible-naming-screen-readers": "Accessible Naming & Screen Reader Concerns",
   "a11y-in-js-apps": "Accessibility in JS Apps",
   "test-automation": "Test Automation for Accessibility",
   "org-skill-building": "Organizational Skill-Building"

@@ -1,8 +1,6 @@
 {
-  "introduction": "Introduction",
-  "how-SRs-work": "How Screen Readers Work",
-  "how-to-enable": "How to Enable Screen Readers",
-  "alternative-text": "Alternative Text",
-  "other-ATs": "Other Assistive Technologies",
-  "exercise": "Exercise"
+  "how-guidelines-fit": "How Guidelines Fit into Automation",
+  "approaches-for-testing": "Approaches for Testing",
+  "using-a-test-API": "Using an A11y Testing API",
+  "exercise-5": "Exercise 5"
 }

@@ -1,9 +1,8 @@
 {
-  "keyboard-only": "Keyboard Only",
-  "skip-links": "Skip Links",
-  "tab-key-navigation": "Tab Key Navigation",
-  "active-element": "Active Element",
-  "keyboard-trapping": "Keyboard Trapping",
-  "shortcuts": "Keyboard Shortcuts",
-  "exercise": "Exercise"
+  "hydration-client-rendering": "Hydration & Client-side Rendering",
+  "managing-focus": "Managing Focus in Interactive Components",
+  "client-side-routing": "Client-side Routing",
+  "hybrid-webviews": "Hybrid Webview 101",
+  "frameworks": "What to Look for in a Framework",
+  "exercise-4": "Exercise 4"
 }

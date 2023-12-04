@@ -1,6 +1,7 @@
 {
-  "introduction": "Overview",
-  "semantic-html": "Using Semantic HTML",
-  "lang-markup": "Setting the Language & Fixing Markup",
-  "exercise": "Exercise"
+  "introduction": "The Foundations Apply",
+  "your-spidey-senses": "What Should Make Your Spidey Senses Go Off",
+  "visibility-methods": "Visibility Methods",
+  "how-to-test-components": "How to Test UI Components",
+  "exercise-2": "Exercise 2"
 }
