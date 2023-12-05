@@ -1,8 +1,39 @@
+import { DropCapQuote } from '/components/DropCap';
+
 # How do MVPs apply to accessibility?
 
-Do less if you can’t make it accessible. The tech and design debt will likely never recover.
+There’s a well-known concept in Agile software development: the Minimum Viable Product. The idea is to produce iterations of a product that solve a customer need, getting from point A to point B each step of the way with a functioning solution. (This is opposed to doing a "Big Bang" release with everything in it, likely going over budget and missing deadlines.)
+
+<figure className="my-6">
+    <img src="/MVP.jpg" alt="MVP diagram of how to build fully-functional products every step of the way" className="block mb-2" />
+    <figcaption>https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp</figcaption>
+</figure>
+
+The unfortunate reality is that MVPs most often leave accessibility out. We often hear teams defend their decisions with “it‘s an alpha version” or ”we‘re just getting started” and although some do come back and address accessibility after the fact, there are missed opportunities from not incorporating it from the very beginning.
+
+This also shows how comfortable teams are with marginalizing the experience of people with disabilities over and over again.
+
+With a nod to Henrik Kniberg’s [writing on MVPs](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp), I pose this idea:
+
+<DropCapQuote>
+What is the cheapest and fastest way we can make something accessible?
+</DropCapQuote>
+
+_Please note, I am not talking about [overlays](https://overlayfactsheet.com) here. I’m discussing a strategy of layering accessible complexity through iterations and phases._
+
+## Technical debt applies to accessibility, big time.
+
+Which parts of an MVP live on? Of course, it will depend on many factors. Quite often, parts of the design and code will make it through to a production environment with the same biases and poor user assumptions as the MVP.
+
+Even when it comes to regular product development–not only a lean ”MVP” approach–the decisions that teams make early on live for years. I’ve even heard them described as _layers of sediment_, to evoke a theme from nature.
+
+Teams don’t recover from design or tech debt without significant re-imagining, replatforming, and essentially starting over.
+
+## Do less if you can’t make it accessible
+
+Going back to our MVP metaphor with modes of travel, we should think of our components in a progressive fashion as well. ([Progressive enhancement](https://sparkbox.com/foundry/MVP_mindset_progressive_enhancement_minimum_viable_experience_MVP_process_and_tooling_decisions), anyone?)
+
+If there are simpler versions of components that we could ship in an early phase, we could have _something accessible_ working for the customer without it going over time or budget. Then we can come back and enhance the component with more bells and whistles as time allows.
 
 Make it part of the culture.
-
-Examples of Accessibility as Product DNA
 
