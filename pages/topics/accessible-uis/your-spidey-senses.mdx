@@ -1,14 +1,42 @@
 # What should make your spidey senses go off 🕷️
 
-Layers
-Modals
-Mouse interactions
-Icons
-Labeling
-Colors
-Forms
+With some practice, there are certain things with web accessibility that you’ll spot from a mile away. Have the curiosity to dig in, and apply a regular [testing workflow](/topics/accessible-uis/how-to-test-components).
 
-Having the curiosity to dig in, and apply a regular testing workflow
+Here are some common accessibility issues that should make your spidey senses go off (most of which I can identify in code reviews without even having to test). We want to bring kindness to these situations and not judge people. But we also need to identify accessibility issues ideally before they ship:
+
+## Modals and Layers
+
+Modals are a big one. Anything that opens as a layer on top of other content has accessibility concerns that need to be considered, including:
+
+- Sending focus into the new content when it opens.
+- Restoring focus to the element the user was on when they opened the modal.
+- Preventing keyboard and screen reader interaction with elements in the background.
+- Using dialog roles, focusable and labeled close buttons and CTAs (Calls to Action), and otherwise accessible markup inside.
+
+Non-modal dialogs don’t have all of the same requirements as they usually don’t have grayed-out backgrounds. But the goal is to put users into the new content when it opens and prevent them from getting stuck behind it, unlike sighted mouse users.
+
+## Mouse-only interactions
+
+I see this one a lot, where a generic DIV element will have a click handler on it: 
+
+```javascript
+<div onClick={clickHandler}>
+    {buttonTitle}
+</div>
+```
+The problem is there is almost never an accessible equivalent with the same functionality. So only mouse users will be able to fire this click event, as DIV elements are not focusable nor are they interactive from the keyboard, not to mention the screen reader situation. More on this next.
+
+## Form labels (made with spans)
+
+Most of us have seen it: a perfectly normal default form `<input>` with text next to it, marked up in a generic `<span>` or `<div>`. The person writing it may have forgotten about the `<label>` element, or maybe they haven’t learned about it yet. Ideally, it’s an easy swap from `<span>` to `<label>`, and you can both label the `input` with an [accessible name](/topics/accessible-naming-screen-readers/ARIA-accessible-name-computaiton) and increase the click target.
+
+## Other form controls
+
+Form controls have historically been an accessible issue as they’ve been very hard to style. This has improved quite a bit recently as browser vendors have made things more styleable. But any time you see a custom dropdown/select, date picker, typeahead or other form control, be sure to test it.
+
+## Colors
+
+Contrast is a very common issue on the web. It often requires testing in a browser to see text that clearly fails contrast ratios, or you need some automated tooling to surface contrast issues that can be computed programmatically. Many automated test suites don’t block builds with accessibility issues, so you might not surface contrast problems in development. But you should be testing out pages that you review and pay attention to visual contrast (we will cover some tools that help [later in this section](/topics/accessible-uis/how-to-test-components)!).
 
 ## Don’t be a DIV button creator
 

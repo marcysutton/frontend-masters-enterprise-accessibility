@@ -1,11 +1,31 @@
 # The Foundations of Accessibility Apply
 
-Design with access in mind: colors, icons, intuitive interfaces (test assumptions with users)
+When it comes to User Interface (UI) components, the foundations of accessibility apply no matter how they are assembled: JS-heavy apps, content-driven websites, vanilla web stacks, you name it. The rendered output and impact on users is what we need to consider.
 
-Valid semantic markup with HTML & ARIA
-- There may be framework-specific quirks, but the _rendered_ output needs to be accessible no matter what
-- Understand what ARIA is doing for you before using it (e.g. `disabled` vs. `aria-disabled`)
+We start by designing with access in mind: visual contrast, font size, icons that are easy to understand, intuitive interfaces that indicate what is interactive, and more. We also have to test our assumptions with users, which we’ll discuss more in the section on [organizational skill building](/topics/org-skill-building/centering-disability).
 
-Structure with headings and landmarks
+In this section we’ll focus more on the technical aspects of accessible UIs, preparing you to identify issues early and contribute accessible implementations. If you know what to watch out for, you can speak up in code reviews and anticipate accessibility issues in your own pull requests. There’s a lot to cover, and we won’t get to all of it. But my goal is to get you into the right mindset with actionable information and techniques proven to improve accessibility in User Interfaces.
 
-Interactivity with keyboards and screen readers
+## Valid semantic markup with HTML & ARIA
+
+Many websites and web apps are delivered with JavaScript libraries and frameworks these days: React, Astro, Vue, Ember, Angular. For users, it doesn’t matter how a website was built. It matters how usable it is when a task needs to be completed.
+
+The most fundamental aspect of website accessibility is semantic markup with HTML and ARIA. Learn and use the default [HTML elements available](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for a big benefit to your team’s velocity, as there are so many features you won’t have to recreate! It’s perfectly normal to reference online sources to jog your memory on how to use certain elements, attributes, etc. Don’t worry...we all do it.
+
+There may be framework-specific quirks in how you construct your components and pages (do I need an extra wrapper element or can I use a fragment? What is this framework component bringing in that I can’t see?). The _rendered_ output needs to be accessible no matter what: the stuff you see in a browser is what matters. So double-check that your rendered markup follows web standards and works with keyboards, screen readers, when zoomed in, and more.
+
+### Understand what ARIA is before using it
+
+We will cover ARIA more in depth in the [next section](/topics/accessible-naming-screen-readers/ARIA-accessible-name-computation). But I want to caution you to tred carefully when you first start using ARIA as it’s easy to get wrong. A safe approach is to use standard HTML first as you get a lot for free. Then you can start layering on ARIA attributes once you become more familiar with testing.
+
+## Structure with headings and landmarks
+
+Semantic structure is created with `h1`-`h6` headings, landmarks such as `main`, `nav`, `footer`, `section` (with unique labels), content markup including lists, and more. These are incredibly important for people who rely on Assistive Technology to understand the structure of a page.
+
+## Interactivity with keyboards and screen readers
+
+Making components interactive is also critical for people using keyboards and screen readers. If everything is a plain old DIV with a click event on it, it won’t be accessible whatsoever. We can do so much more with default HTML and some JavaScript!
+
+Ensure that anything a mouse user can do, a keyboard user can do. You can then layer on functionality for Assitive Technology when needed. For example, a `<button>` element will be focusable by default. It will also have a `button` role built-in and it will respond to `click` event handlers.
+
+The easiest way to understand this issue is to start testing with the keyboard, which we will do in this section. Can you reach and operate every interactive control, or are there accessible alternatives to complete the same task?

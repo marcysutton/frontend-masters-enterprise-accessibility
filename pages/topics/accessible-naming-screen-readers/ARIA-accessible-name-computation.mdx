@@ -1,6 +1,8 @@
 # ARIA and accessible name computation
 
-VERY quick intro of what ARIA is
+ARIA, or Accessible Rich Internet Applications, is a specification that gives us a standard set of attributes for plumbing accessibility information through HTML.
+
+An example of a common misunderstanding related to ARIA is the `disabled` attribute versus `aria-disabled` for form inputs and other controls. Only `disabled` will impact the focusability and style of an HTML element as sighted users will experience, while `aria-disabled` won’t really impact the visible frontend. The ARIA counterpart to disable form controls will only impact Assistive Technology through the [Accessibility Tree](/topics/accessible-naming-screen-readers/the-accessibility-tree), without any affects to the DOM.
 
 Accessible names and descriptions are mentioned in the [main ARIA specification](https://www.w3.org/TR/wai-aria-1.2/#namecalculation) as well as a specialized document called [Accessible Name and Description Computation](https://www.w3.org/TR/accname-1.2/). It’s geeky and informative stuff that you should know!
 
