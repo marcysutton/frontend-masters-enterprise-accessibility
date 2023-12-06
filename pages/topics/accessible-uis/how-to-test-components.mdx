@@ -1,5 +1,15 @@
 # How to Test a UI Component for Accessibility
 
-Quick manual testing workflow
+You should get in the habit of testing UI components for accessibility every time you work on them, and as often as possible when reviewing your colleagues’ work.
 
-Reflow and cross-platform accessibility
+Here are the steps I take regularly to test components and pages:
+
+1. Use the keyboard to TAB through the page. Can you reach, operate, and see every interactive control on the screen? Can you use the arrow keys for compound widgets?
+    - Note that not everything has to be interactive for screen readers (e.g. headings)!
+2. Run a browser extension like Axe or Accessibility Insights to surface WCAG violations and best practices.
+    - Debug elements using the browser DevTools as well.
+3. Zoom in to at least 200% to make sure pages reflow without horizontal scrolling. Do any components break when zoomed in?
+4. Test with a screen reader like VoiceOver or NVDA.
+5. Check that animation, motion, and autoplaying video can be turned off with controls and Reduced Motion settings.
+6. Make note of any media in need of captions, transcripts, and other alternative content.
+

@@ -24,7 +24,9 @@ I see this one a lot, where a generic DIV element will have a click handler on i
     {buttonTitle}
 </div>
 ```
-The problem is there is almost never an accessible equivalent with the same functionality. So only mouse users will be able to fire this click event, as DIV elements are not focusable nor are they interactive from the keyboard, not to mention the screen reader situation. More on this next.
+The problem is there is almost never an accessible equivalent with the same functionality. So only mouse users will be able to fire this click event, as DIV elements are not focusable nor are they interactive from the keyboard, not to mention the screen reader situation.
+
+Don’t be a DIV button creator, or allow one to ship!
 
 ## Form labels (made with spans)
 
@@ -37,7 +39,3 @@ Form controls have historically been an accessible issue as they’ve been very 
 ## Colors
 
 Contrast is a very common issue on the web. It often requires testing in a browser to see text that clearly fails contrast ratios, or you need some automated tooling to surface contrast issues that can be computed programmatically. Many automated test suites don’t block builds with accessibility issues, so you might not surface contrast problems in development. But you should be testing out pages that you review and pay attention to visual contrast (we will cover some tools that help [later in this section](/topics/accessible-uis/how-to-test-components)!).
-
-## Don’t be a DIV button creator
-
-(Or allow one to ship)
