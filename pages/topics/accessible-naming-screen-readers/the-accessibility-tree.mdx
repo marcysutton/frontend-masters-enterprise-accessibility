@@ -1,6 +1,39 @@
+import Links from '/components/links';
+
 # The Accessibility Tree
 
-What is it and how is it created?
+The Accessibility Tree is a parallel structure to the Document Object Model (DOM) created by [platform accessibility APIs](https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/) and web browsers to surface accessibility information to Assistive Technology (AT). It is affected by HTML, ARIA, and sometimes CSS. When the tree changes, the browser sends events to AT saying a portion of the tree has changed or updated.
 
-How do I visualize and test the accessibility tree?
+The tree provides AT with a structure with irrelevant elements stripped out, such as `style` and `script` tags, among other things. MacOS accessibility APIs, iOS accessibility APIs, Windows accessibility APIs, etc. all produce their own precise versions of this tree, meaning that roles and things can vary slightly.
 
+<figure className="my-6">
+    <img src="/geckoflow-ax-tree.png" alt="The Accessibility Tree flow in Firefox (Gecko)" />
+</figure>
+
+> If you want to read some even geekier stuff about the Accessibility Tree, I wrote about it on [my website](https://marcysutton.com/accessibility-and-performance#What-impacts-the-accessibility-tree) (where this graphic came from).
+
+The Accessibility Tree is only really impactful in ATs like screen readers. (Screen readers these days also reference the DOM quite often, though. JAWS definitely does to try and improve the experience of many inaccessible webpages out there.)
+
+## How do I visualize and test the accessibility tree?
+
+We have great tools for testing the accessibility tree these days! You can use the same Accessibility viewer in Chrome DevTools we saw for accessible naming, as well as Safari Developer Tools and Firefox Developer Tools to name a few. You can also fire up a screen reader!
+
+Modern browser DevTools are really great for showing how the Accessibility Tree relates to the DOM. It will show you accessible names, roles, whether an element is hidden, or if it doesn’t provide accessibility information.
+
+<figure className="my-6">
+    <img src="/devtools-accessible-name.png" alt="Chrome DevTools Accessibility Inspector on an icon button on StackBlitz" />
+</figure>
+
+## Why this matters
+
+By learning about the accessibility tree and how it relates to the DOM, you’ll have a better understanding of what ARIA is and how it relates to HTML.
+
+An example of a common misunderstanding related to ARIA is the HTML `disabled` attribute versus `aria-disabled` for form inputs and other controls. Only `disabled` will impact the focusability and style of an HTML element that sighted users will experience, while `aria-disabled` won’t really impact the visible frontend. The ARIA counterpart to disable form controls will only impact Assistive Technology through the Accessibility Tree, without any affects to the DOM.
+
+If you know about these differences, you’ll be much more informed when using attributes in your markup. You’ll also have an easier time testing because you’ll know what to expect.
+
+
+<Links>
+- https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/
+- https://marcysutton.com/accessibility-and-performance#What-impacts-the-accessibility-tree
+</Links>

@@ -1,3 +1,63 @@
 # Screen Reader Commands & Interaction Modes
 
-cheat sheets
+Here are some tips and commands for using various screen readers, including Voiceover for MacOS and iOS, NVDA and JAWS on Windows, and Android:
+
+<details>
+<summary>**VoiceOver for MacOS**</summary>
+    - How to toggle on and off: 
+        - Command (⌘) F5
+        - Fn Command (⌘) F5 on a laptop
+    - Using the VoiceOver Activation keys:
+        - Control + Option (VO) 
+    - Navigating a page:
+        - Using the TAB / Shift+TAB keys. This will cycle through focusable elements.
+        - Using the Arrow keys. This will cycle through various pieces of content on the page, depending on the mode.
+        - While holding the VO keys, many other commands. See [cheat sheet](https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts).
+        - Launching the VoiceOver Rotor:
+            - With VO enabled, hit VO + U. Use arrow keys to navigate sections.
+        - Use Escape to close as a convention.
+    - Silence with command key:
+        - Hold the command key while the screen reader is speaking to make it quiet immediately. Helpful for doing demos!
+    - Changing screen reader speaking rate
+        - In the VoiceOver Utility app under Speech, change rate for any voice available.
+    
+VoiceOver for desktop cheat sheet: https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts
+</details>
+
+<details>
+<summary>**VoiceOver for iOS**</summary>
+On an iOS device, check out _Settings > Accessibility_ to set up VoiceOver or Switch Control to launch with a triple tap of the power button.
+
+VoiceOver for iOS cheat sheet: https://dequeuniversity.com/screenreaders/voiceover-ios-shortcuts
+</details>
+
+<details>
+<summary>**NVDA and JAWS for Windows**</summary>
+
+[NVDA](https://www.nvaccess.org/download/) and [JAWS](https://www.freedomscientific.com/products/software/jaws/) are popular screen readers on Windows.
+
+How to set up NVDA on a Parallels Virtual Machine, which also [requires a Windows license](https://kb.parallels.com/9003): 
+- https://jerryjones.dev/2020/08/06/setting-up-nvda-on-parallels-with-macos/
+
+- NVDA cheat sheet: https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts
+- JAWS cheat sheet: https://dequeuniversity.com/assets/pdf/screenreaders/jaws.pdf
+</details>
+
+<details>
+<summary>**Android Accessibility**</summary>
+
+- Tips for testing with Android: https://developer.android.com/guide/topics/ui/accessibility/testing
+- TalkBack cheat sheet: https://dequeuniversity.com/screenreaders/talkback-shortcuts
+</details>
+
+## Windows screen reader interaction modes
+
+While VoiceOver works with jumbles of key combinations (as I like to call them), NVDA and JAWS on Windows work differently. They have simpler key commands (meaning fewer keys to hold and remember), but there is a concept of [_interaction modes_](https://tink.uk/understanding-screen-reader-interaction-modes/) that you should know about.
+
+The default mode in NVDA, for example, is _Browse Mode_. This allows reading of content and cycling through headings with the H key, for example.
+
+When you focus in a form input or similar interactive widget, the mode changes to _Forms Mode_ a.k.a. _Focus Mode_. This allows you to type an H in a field and have it pass that character to the form input, rather than announcing the next heading. The screen reader will go in and out of this mode automatically. You can also swap modes using the key command `NVDA` + `Space` (where `NVDA` is the `Insert` key on a Windows keyboard, unless it has been mapped to something else).
+
+Certain element roles swap you in and out of these modes, such as the form controls I mentioned or content like paragraphs and DIVs.
+
+⚠️ There is also the ARIA `application` role that puts a user directly into _Focus mode_. Be _VERY_ careful about using this as you will essentially strip away Windows screen reader commands and keystrokes will be passed directly to the browser. Before going to this as a solution, test with users who rely on screen readers all the time. It’s too easy to get this wrong. So I want to give you the biggest of cautions when it comes to the `application` role.

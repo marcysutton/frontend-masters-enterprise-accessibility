@@ -1,8 +1,8 @@
 {
-  "hydration-client-rendering": "Hydration & Client-side Rendering",
-  "managing-focus": "Managing Focus in Interactive Components",
-  "client-side-routing": "Client-side Routing",
-  "hybrid-webviews": "Hybrid Webview 101",
-  "frameworks": "What to Look for in a Framework",
-  "exercise-4": "Exercise 4"
+	"client-side-routing": "Client-side Routing",
+	"managing-focus": "Managing Focus in Interactive Components",
+	"semantics-and-ARIA": "Semantics & ARIA",
+	"frameworks": "What to Look for in a Framework",
+	"hybrid-webviews": "Hybrid Webview 101",
+	"exercise-4": "Exercise 4"
 }

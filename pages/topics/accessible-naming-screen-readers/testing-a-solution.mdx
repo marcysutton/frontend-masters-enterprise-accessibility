@@ -1,17 +1,27 @@
 # Testing a Given ARIA Solution
 
-Test it yourself.
+It’s too easy to get ARIA wrong, as most developers have an easier time using attributes than they do testing. We don’t want to rely on QA so heavily that they’re looking out for specific ARIA attributes (even if you have QA), because the feedback cycle would be _so unnecessarily long_. For that reason and more, it’s important to test solutions yourself early and often.
 
-Compare your analytics to the WebAIM screen reader surveys to know what to prioritize.
+Here are some tips on how to test a given ARIA solution (after you’ve exhausted every default HTML option available):
+
+1. Compare your site’s analytics to the [WebAIM screen reader surveys](https://webaim.org/projects/screenreadersurvey9/) to know what screen reader and browser combinations people actually use. This can help you prioritize.
 
 You can also look to:
 
-- People who use screen readers regularly
-- A11ySupport.io
-- ARIA Authoring Practices
-- GitHub issue trackers (NVDA, WAI-ARIA, WCAG, etc.)
-- WebAIM email discussion list
+2. People who use screen readers regularly. We’ll talk about this more in [organizational skill building](/topics/org-skill-building/centering-disability).
+3. Check [A11ySupport.io](https://a11ysupport.io) for specific attribute support.
+4. The ARIA Authoring Practices might have some suggestions, although these are not production ready.
+5. Snoop around issue trackers for the major repos: [NVDA](https://github.com/nvaccess/nvda), [WAI-ARIA](https://github.com/w3c/aria), [WCAG](https://github.com/w3c/wcag), [WebKit and Safari](https://bugs.webkit.org/), and more.)
+- Go through the archives of the [WebAIM email discussion list](https://webaim.org/discussion/archives) and ask a new question if needed.
 
 ## Remember that screen readers aren’t the only thing in accessibility
 
-”Why would a feature need to be visible if it’s for screen reader users?” (like skip links)
+Developers often want to solve things with attributes and markup, many of which will impact screen reader users. Just remember that screen readers aren’t the only piece of accessibility. You also need to remember and test keyboard support, visual contrast, reflow and zoom, navigating by voice (which also leverages semantic HTML), and more.
+
+Skip links come to mind:
+
+> ”Why would skip links need to be visible if they’re only for screen reader users?”
+
+Well, skip links are for everyone who uses a keyboard. Many people need to see them, and they need to work in screen readers, too.
+
+There are many areas of accessibility that we have to address among other web development concerns. So when you’re prioritizing work items of various sizes, keep diverse user groups and the accessibility impact of issues in mind.

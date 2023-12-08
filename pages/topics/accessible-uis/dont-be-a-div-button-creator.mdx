@@ -1,0 +1,49 @@
+# Don’t be a DIV button creator (or allow one to ship)
+
+It’s real easy to add a click event to a DIV. Too easy, in fact. And it happens all the time! the problem is, DIVs are not interactive elements so you have to backfill quite a few things to make them accessible. All the while, you could have just used a `<button>` element and been done with it.
+
+Here’s what it takes to make a DIV into an accessible button:
+
+<figure className="grid grid-cols-2 gap-6 py-2 item-start">
+
+```javascript
+<div
+    onClick={clickHandler}
+    onKeyDown={keyHandler}
+    role="button"
+    tabIndex="0">
+    Submit
+</div>
+```
+```javascript
+const keyHandler = (event) => {
+    if (event.code === 'Space' ||
+        event.code === 'Enter) {
+        // do click stuff
+    }
+}
+```
+
+</figure>
+
+In the key handler, you’d want to conditionally fire logic when the user presses the Space and Enter keys. And if it’s an icon button or something without text content, don’t forget to give it an accessible name (probably an `aria-label`)!
+
+It’s _so much simpler_ to create a Button element. Here’s what you‘d have to do to get the same functionality and access:
+
+```javascript
+<button onClick={clickHandler}>
+    Submit
+</button>
+```
+
+That’s it. No explicit button role, no `tabIndex`, no key handler (because buttons will fire from clicks with the keyboard, unlike DIVs).
+
+## Be on the look out for DIV buttons
+
+This is one of the easiest things to spot in a code review: a click event on a DIV (or a listitem, and other inaccessible elements). Often, team members will do a pretty good effort and remember the role and tabIndex but they’ll forget the keyboard event because testing isn’t part of their regular workflow.
+
+Make keyboard testing part of your regular workflow, and use HTML buttons! Problem solved.
+
+## A note about AI
+
+We definitely need to address this issue (along with other parts of accessibility) in development, also called authoring. We can’t expect Assistive Tech or AI to solve this for us. It’s a highly privileged point of view to expect that to solve things, as most people around the world can’t afford fancy tech like that. Instead, we can work to make our UIs accessible in this most basic of ways now and well in the future.

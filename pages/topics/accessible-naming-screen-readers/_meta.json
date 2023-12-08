@@ -1,7 +1,8 @@
 {
-  "ARIA-accessible-name-computation": "ARIA & Accessible Name Computation",
-  "visual-nonvisual-experience": "Visual vs. Non-Visual Experience",
-  "screen-reader-commands-interaction-modes": "Screen Reader Commands & Interaction Modes",
-  "testing-a-solution": "Testing an ARIA Solution",
-  "exercise-3": "Exercise 3"
+	"ARIA-accessible-name-computation": "ARIA & Accessible Name Computation",
+	"the-accessibility-tree": "The Accessibility Tree",
+	"testing-a-solution": "Testing an ARIA Solution",
+	"visual-nonvisual-experience": "Visual vs. Non-Visual Experience",
+	"screen-reader-commands-interaction-modes": "Screen Reader Commands & Interaction Modes",
+	"exercise-3": "Exercise 3"
 }

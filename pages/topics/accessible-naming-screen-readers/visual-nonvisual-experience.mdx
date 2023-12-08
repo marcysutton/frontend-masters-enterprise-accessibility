@@ -1,10 +1,18 @@
 # The Visual vs. Non-Visual Experience
 
+We have to consider the experience of our pages beyond the visual, with semantic structure and content. But we can’t forget about the visual experience, either!
+
+We touched on accessible naming with `aria-label` in [accessible name computation](/topics/accessible-naming-screen-readers/ARIA-accessible-name-computation). Here are a few scenarios for you to consider:
+
 - Icon buttons
 - aria-labels
 - Exposing accessibility information for a given design
 
 ## A cautionary note
 
-Don’t try too hard to make labeling perfect for Assistive Technology...you could make the experience worse.
+Many times, developers fire up a screen reader and want to make things _perfect_. It’s the screen reader equivalent of chasing pixel perfection. But it’s even harder to do with screen readers because accessibility APIs on various platforms have unavoidable differences.
+
+Rather than sinking a bunch of time into trying to craft the perfect screen reader announcement (such as for phone numbers, dates, etc.), get something working that’s _good enough_. Test it with users who rely on AT if possible. 
+
+Bottom line: don’t try too hard to make labeling perfect for Assistive Technology...you could make the experience worse.
 

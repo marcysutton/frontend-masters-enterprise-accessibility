@@ -1,0 +1,26 @@
+# Semantics & ARIA in JS Apps
+
+Anytime we’re talking about JavaScript-heavy apps, I have to plug semantic HTML and ARIA. Learn the default HTML elements and use them. I love [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) for this!
+
+It’s pragmatic to use HTML, as it’s less functionality that you have to recreate. You probably will miss some of the features that browser components give you, anyway...have you dug into how many cool things native `<select>` elements can do? Even the [button element](/topics/accessible-uis/dont-be-a-div-button-creator) is a perfect example of working smart, not hard. Which PM wouldn’t appreciate saving time and money by using built-in functionality?
+
+## Keep the rendered output in mind
+
+Components are so easy to create in JavaScript these days. Depending on the library, you can become mentally quite separated from what gets rendered in the browser. Don’t forget that your rendered markup has to be accessible. Use standards, check your source in the browser, run a brower extension like Axe, and improve things before they ship to production.
+
+## Make sure you understand ARIA before using it
+
+I’ve seen developers fall into a trap of jumping straight to ARIA before exhausting default HTML. But it’s too easy to get wrong with the lacking amount of testing most teams actually do. Support isn’t always great for ARIA even if attributes existed for things, either (heard of ARIA drag & drop? it was never supported and is now deprecated.)
+
+Don‘t fail the [rules of ARIA](https://www.w3.org/TR/using-aria/):
+
+1. If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+
+2. Do not change native semantics, unless you really have to.
+
+3. All interactive ARIA controls must be usable with the keyboard.
+
+4. Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element.
+
+5. All interactive elements must have an accessible name (hey, we know that one!).
+

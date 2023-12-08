@@ -1,8 +1,37 @@
-# Client-side Routing
+# Client-side Rendering and Routing
 
-The common problem
-- Include link to my research
+Let’s focus for a bit on the unique aspects of JavaScript-heavy web apps, starting with client-side rendering and routing.
 
-Refresher of ARIA Live Regions & Skip Links
+When you render your pages using JavaScript libraries like React, Angular, Ember, Vue, etc., most of the UI is injected into the page with JavaScript. Sometimes it will be pre-rendered from the server and updated to client-rendering with a concept called _hydration_ (Next and Svelte do this, among others). Increasingly, frameworks and libraries will render from the server or at least give you the option (thinking of Astro).
 
-Applying focus management and live regions together
+## Do people turn JavaScript off?
+
+There has been a debate over whether sites need to work without JavaScript for a long time. Most of the internet requires it. But it is getting easier to at least render static content from the server. The interactivity we’ve come to know and expect won’t be possible without JS. But we can go back to some basics with forms and server-side actions, it’s true.
+
+## What are the accessibility impacts of JavaScript?
+
+Screen readers look at a page as-rendered, and they do use JavaScript. You don’t need to support non-JS to be accessible by any means. But you do need to consider lower-bandwidth networks and older devices for people with disabilities. Many people can’t afford the latest tech for various reasons. This is another area where performance and accessibility intersect.
+
+## What is client-side routing?
+
+When JavaScript delivers your pages and takes over navigation from page to page, it takes functionality away from the web browser. Specifically, JavaScript will replace one rendered view with another on demand, without a full page refresh. This has impacts on keyboard focus and screen reader experience, as the typical page title announcements and focus reset won’t occur unless we replace them.
+
+There are multiple techniques to handle client-side routing for accessibility:
+
+- Send focus to the main heading (with `tabIndex="-1"` on it) in the new content so it will be announced and focus won’t remain on the old content.
+- Send focus to a wrapper element for the new content (also with `tabIndex="-1"` on it).
+- Put an ARIA live region on the new content so it will be announced when it changes and leave focus where it is.
+- Make an ARIA live region announcement in a separate element and leave focus where it is.
+
+I was curious which of these techniques was best for people who use screen readers, so I decided to do [some testing](https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/). It seemed like a combination of these techniques would work best. And that’s exactly the conclusion I came to:
+
+- Move focus to the new content so users are in the right part of the page (and don’t have to start over from the top).
+- Make a Live Region announcement so the whole page context is explained.
+
+That means if I navigate to a Portfolio page with a marketing heading of "My work", both things will be announced and my focus will be in the new content area instead of left back in the nav.
+
+You can read the full research study here, which has been referenced by most of the major JavaScript frameworks: https://www.gatsbyjs.com/blog/2019-07-11-user-testing-accessible-client-routing/
+
+## Real talk real quick
+
+Even though I did all this research and I love to teach about Accessible JavaScript, I’m actually not a fan of client-side routing. It’s been half-baked and problematic in almost every implementation. I personally feel that multi-page apps are easier to maintain and you get to benefit from full page refreshes (which are configurable in the screen reader, while custom client-side routing announcements are not).

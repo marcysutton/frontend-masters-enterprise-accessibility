@@ -1,14 +1,26 @@
 # What to Look for in a Framework
 
-Semantics
-Routing
-Docs/Community
-Testing Tools
+When choosing a JavaScript framework or library like React, Vue, Svelte, etc., there are some things to look for when it comes to accessibility:
 
-A nod to stability/longevity of a framework. What is the funding model? Who is maintaining it and what is the state of their issue tracker/codebase for accessibility?
+1. Support for semantic HTML and ARIA.
+    Does the framework get in your way at all when creating accessible markup? Most of the libraries have gotten very good at this -- you can include ARIA attributes with ease and many tout core accessibility features. But they also don’t necessarily discourage you from putting click events on DIVs. Just sayin’.
+2. Routing
+    Does the routing library you’ve chosen do anything for [client-side routing and accessibility](/topics/a11y-in-js-apps/client-side-routing)? There’s an unfortunate history with some of the most popular routers giving lip service to accessibility but doing nothing about it. This has been rough enough in my experience to recommend multi-page apps or write your own router with the [Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api) and a polyfill.
+3. Docs/Community
+    Do a search of the docs and GitHub/etc. repos for the library. Have they handled accessibility issues openly? Is there a culture around making accessibility improvements, or have issues languished for half a decade (or been closed with no action)?
+4. Testing Tools
+    Testing tools are super helpful to have. You can always bolt on an agnostic testing framework like Cypress. But other tooling for your particular library (like Jest, Testing Library, etc.) will prove to be essential for any long-lived web application.
 
-# Helpful Framework Accessibility APIs
+Some other considerations when picking a library or framework:
 
-React Refs
-Vue Refs
-other components
+- What is the potential lifespan of your project? Will you need something super robust for years to come, or is it for a smaller project that has fewer requirements?
+- What is the funding model of the framework you’re considering? Were they just acquired, and by whom?
+- Who is maintaining it and what is the state of their issue tracker/codebase for accessibility?
+
+# Helpful Framework Accessibility APIs and Docs
+
+Look for accessibility APIs and components within the framework ecosystem, too. Here are some that I know about and appreciate:
+
+- [React Refs](https://react.dev/learn/referencing-values-with-refs)
+- [Vue Template Refs](https://vuejs.org/guide/essentials/template-refs)
+- [Ember a11y](https://guides.emberjs.com/release/accessibility/)

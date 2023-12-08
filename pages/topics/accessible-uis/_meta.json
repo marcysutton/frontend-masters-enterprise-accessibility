@@ -1,7 +1,8 @@
 {
-  "introduction": "The Foundations Apply",
-  "your-spidey-senses": "What Should Make Your Spidey Senses Go Off",
-  "visibility-methods": "Visibility Methods",
-  "how-to-test-components": "How to Test UI Components",
-  "exercise-2": "Exercise 2"
+	"introduction": "The Foundations Apply",
+	"your-spidey-senses": "What Should Make Your Spidey Senses Go Off",
+	"dont-be-a-div-button-creator": "Don’t Be a DIV Button Creator",
+	"visibility-methods": "Visibility Methods",
+	"how-to-test-components": "How to Test UI Components",
+	"exercise-2": "Exercise 2"
 }
