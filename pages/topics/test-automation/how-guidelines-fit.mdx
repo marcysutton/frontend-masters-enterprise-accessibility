@@ -1,7 +1,16 @@
 # How Accessibility Guidelines Fit into Automation
 
-What can be automated, and what can’t
+Accessibility automation is an important part of building quality software. You can ensure that something works repeatedly when a computer can test it on demand. You can also bake in a contract for _how_ something should work so that other devs (or yourself, in the future) are less inclined to break it without anyone noticing.
 
-Not succumbing to a culture of ”we‘ll just automate it all, we don’t need training or expertise”
+While accessibility automation can be helpful, it’s also hard to get right. Sometimes the tooling doesn’t support what you need to test, or it’s super time consuming to experient and come up with effective solutions. And then there is the problem of executives thinking that everything in accessibility can be automated so they need fewer informed engineering staff members. Newsflash: it can’t.
 
-A brief mention of overlays: what are they, how are they holding up in the courts / against standards
+## What can be automated, and what can’t
+
+Estimates for how much of [WCAG](https://www.w3.org/TR/WCAG22/) we can automate with browser extensions and such are around 50% of accessibility issues by volume. And that’s only from one vendor, [Deque Systems](https://www.deque.com/automated-accessibility-testing-coverage/). You can review their [rule descriptions for axe-core here](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).
+
+When it comes to automation, you have to write tests that cover various parts of your app. The code won’t know about super inaccessible aspects like click events on DIVs, just like a blind person wouldn't. You have to write coverage that asserts something will work with the keyboard. Which is fun to do with the latest tools! But it takes time and expertise.
+
+Let’s dig into what it takes to write automated accessibility tests so we can bake in quality in an effective way, without spinning our wheels on stuff that will never work. You’d be better off manually testing some flows than having misleading automated tests, after all.
+
+It’s about striking the right balance of automation, reliable code patterns, QA, and persistence. My hope is that you don’t succumb to a culture of “it’s too hard to make it accessible.” That’s the one thing I hope to help you work through and largely avoid.
+

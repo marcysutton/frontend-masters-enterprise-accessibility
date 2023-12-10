@@ -1,5 +1,25 @@
 # Using an Accessibility Test API
 
-How to use Axe in Cypress and other tools
+Writing your own automated accessibility tests can be a huge asset, as you’ll have specialized coverage for parts of your app that a framework wouldn’t necessarily know about. You can also document it through tests for team members to understand how it _should_ work and how it _used to_ work&hellip;before someone broke the tests.
 
-Test at page-level or integration/compound component level for performance reasons
+You likely don’t want to be in the business of writing _accessibility testing rules_. Libraries like [axe-core](https://github.com/dequelabs/axe-core) and [WAVE](https://wave.webaim.org/api/) (among others) were written for this purpose by accessibility companies and organizations that deal with accessibility compliance every single day. They bake their findings and knowledge of accessibility in the real world into their APIs so developers and test engineers don’t have to write those rules.
+
+For example, axe-core has rules for color contrast and a ton of ARIA stuff including what’s “accessibility supported”. The team keeps close track of WCAG and ARIA along with support in various Assistive Technologies, and they update their rules accordingly. The WebAIM team responsible for WAVE has a similar footprint and track record in the industry.
+
+Writing (and maintaining) those rules wouldn’t be a great use of time for most teams. So you should consider using an accessibility test API (if you haven’t already)!
+
+## Axe in Automated Tests
+
+The axe-core library has become popular because it has solid results and it’s free and open source. You can integrate it into unit tests, although its page-level rules for contrast in particular could be quite slow. You might want to limit it to integration or end-to-end testing where you can run the API on a larger section of DOM for performance reasons.
+
+Also consider how you’ll digest the results. Teams with increasing accessibility maturity (and budgets) have robust solutions where developer results get piped to other environments, like web-based dashboards and the like. But most developers could get results from an automated test result that they can discern on their own on the command line.
+
+There are different flavors of Axe that could be useful:
+
+- React-axe
+- Jest-axe
+- Cypress-axe
+
+There are also other testing products that could be more comprehensive for your team. It is important in a larger organization to test with the same ruleset and technology as much as possible, which we’ll discuss in the next section.
+
+Find something that works for you!

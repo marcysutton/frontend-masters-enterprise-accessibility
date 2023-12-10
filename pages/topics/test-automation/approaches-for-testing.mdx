@@ -1,22 +1,69 @@
-# Approaches for Testing
+import Links from '/components/Links';
 
-## Configuring Testing Tools
+# Approaches for Automated Testing
 
-How is the UI rendered?
-- React DOM?
+For any component, there are multiple types of automated tests that could apply. There’s unit testing for isolated logic and functionality, Storybook and Cypress component testing for a single component or a group of components, integration testing for compound components or pages, and end-to-end testing for automating whole pages.
 
-How is the code bundled?
-- webpack
-- parcel
+But these lines are blurry. You can use automated tooling that reproduces bugs and ensures fixes are baked in for any scenario. What you call it is less important (integration or end-to-end? Who cares, tbh).
+
+## Linting
+
+You can run accessibility tests in your text editor (many of us use VS Code these days) using [ESLint-Plugin-JSX-A11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) or [Axe Linter](https://www.deque.com/axe/devtools/linter/). These are helpful tools for checking code before you commit it, but you might need to configure them to keep the tools helpful.
 
 ## Unit tests
 
+[Jest](https://jestjs.io/) is the modern standard for most unit tests in web apps these days. There are excellent tools to use with Jest for accessibility testing, including [Testing Library](https://testing-library.com/) with its queries and userEvent API, and [Jest DOM](https://github.com/testing-library/jest-dom) with its accessibility matchers.
+
+(Testing Library includes framework APIs for vanilla DOM, React, React Native, Vue, Angular, Preact, Svelte, Cypress, Puppeteer, and more.)
+
+I consider these three unit testing tools (Jest, Testing Library, and Jest-DOM) to be essential for any modern web app if you can make it work with their various plugins.
+
 ## Component testing
-- Cypress
-- Storybook
+
+Within the sphere of automated testing, [Cypress Component Testing](https://docs.cypress.io/guides/component-testing/overview) is also a tool to consider. If you already use Cypress and you enjoy their API, you could use it to isolate single components or groups of components using the Cypress API. This is opposed to testing whole pages, to which regular Cypress is well suited.
+
+But don’t sleep on [Storybook](https://storybook.js.org/) for component testing. It bridges the gap between manual testing and automated testing, and can be essential for some teams. I’ve become a Storybook champion in recent days, now that I see how it can provide stability in the face of destructive data actions that can’t be replaced without client interaction. You can build out your components, variants, data states, and more in Storybook and test them with ease.
 
 ## Integration testing
 
+After unit testing, integration testing is the next big leap. Integration testing is often done with [Cypress](https://cypress.io) or [WebdriverIO](https://webdriver.io/), although Jest tests can blur these lines quite a bit (as can WebdriverIO!). The goal is to bring multiple components together in test and ensure there aren’t any unexpected effects.
+
 ## End-to-End testing
 
+End-to-End testing, or e2e, is the last big bucket in automated testing that we’ll cover. End-to-end testing covers whole pages, which allows for unique accessibility testing aspects such as page navigation and page-level issues like visual contrast or document language. 
+
+End-to-end testing isn’t necessarily distinct from integration in my experience. You also wouldn’t want to drown in testing tools just to satisfy some semantic purpose. The goal with end-to-end and integration testing is to cover the page context, and any details you can’t assert with unit tests (like link clicks actually going to a new page).
+
 ## Should accessibility issues fail a build or not?
+
+You can configure certain tests to fail a build or not. Should accessibility tests fail a build? I feel that the feature tests you write for keyboard interactions and other detail-oriented things that you know a lot about should fail a build just like any other automated test.
+
+Lint rules like TypeScript often fail builds. Whether accessibility lint rules should fail builds is a valid question! It’s worth experimenting with your team and figuring out a process that adds just the right amount of friction, much like snapshot testing.
+
+Other accessibility test APIs might be good candidates for running in development or under certain conditions. Maybe they run on Continuous Integration checks for your development envrionment, but not for later environments where other things have been checked? That’s because you might find issues that aren’t relevant to the current sprint or the tooling can’t quite tell what’s a valid issue or not.
+
+Better to configure automated test tooling to meet your needs than to disable it entirely. 
+
+## Configuring Testing Tools
+
+Tool configuration can be challenging at best, and blocking at worst! Sometimes infrastructure changes can be blocking issues that require a pivot (can these upgrades wait? Until when, and what will we do in the meantime?).
+
+Here are some questions to ask while configuring tooling:
+
+- How is the UI in your app rendered? React-DOM, React-Native, etc.?
+- Can you inject tooling for accessibility tests in that context?
+    - i.e., can you inject test APIs into the target document or environment?
+- How is the code bundled?
+    - Does it use webpack, Parcel, etc.?
+    - Can you make changes to the infrastructure for accessibility testing, or will you have to make do with what’s already there?
+- Who do I have to talk to, to get a configuration change around here?
+
+<Links>
+- https://jestjs.io/
+- https://testing-library.com/
+- https://github.com/testing-library/jest-dom
+- https://docs.cypress.io/guides/component-testing/overview
+- https://storybook.js.org/
+- https://cypress.io
+- https://webdriver.io/
+</Links>

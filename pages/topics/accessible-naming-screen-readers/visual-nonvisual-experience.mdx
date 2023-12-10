@@ -1,18 +1,26 @@
-# The Visual vs. Non-Visual Experience
+import {DropCapQuote} from '/components/DropCap';
 
-We have to consider the experience of our pages beyond the visual, with semantic structure and content. But we can’t forget about the visual experience, either!
+# The Visual and Non-Visual Experience
 
-We touched on accessible naming with `aria-label` in [accessible name computation](/topics/accessible-naming-screen-readers/ARIA-accessible-name-computation). Here are a few scenarios for you to consider:
+We have to consider the shared experience of our pages: visual and non-visual. We can begin to craft the non-visual experience with semantic structure and content. We can impact the visual experience with clear visual contrast, readable fonts, zoomable pages, and more.
 
-- Icon buttons
-- aria-labels
-- Exposing accessibility information for a given design
+We also want to think about the intersection of visual and non-visual: the areas where we describe what is on screen in alternative text, screen reader labels, and such.
+
+We touched on accessible naming in the previous section on [accessible name computation](/topics/accessible-naming-screen-readers/ARIA-accessible-name-computation). One issue with relying on `aria-label` attributes is their content can become outdated for what’s on screen. `aria-labelledby` could be one technique to keep label content fresh, as it would often reference visible content like headings or other text.
 
 ## A cautionary note
 
-Many times, developers fire up a screen reader and want to make things _perfect_. It’s the screen reader equivalent of chasing pixel perfection. But it’s even harder to do with screen readers because accessibility APIs on various platforms have unavoidable differences.
+Many times, developers fire up a screen reader and want to make things _perfect_. It’s the screen reader equivalent of chasing pixel perfection. But it’s even harder to do with screen readers, partly because accessibility APIs on various platforms have unavoidable differences.
 
-Rather than sinking a bunch of time into trying to craft the perfect screen reader announcement (such as for phone numbers, dates, etc.), get something working that’s _good enough_. Test it with users who rely on AT if possible. 
+<DropCapQuote>
+“Is there a way to tell a screen reader that you want a number to be read out as _two thousand one hundred and fifty four_?”
+</DropCapQuote>
+
+The recommendation is to leave screen reader defaults alone.
+
+Rather than sinking a bunch of time into trying to craft the perfect screen reader announcement (such as for phone numbers, dates, etc.), get something working that’s _good enough_. Test it with users who rely on AT if possible.
+
+Here’s a great [article from Adrian Roselli](https://adrianroselli.com/2023/04/dont-override-screen-reader-pronunciation.html) on this topic.
 
 Bottom line: don’t try too hard to make labeling perfect for Assistive Technology...you could make the experience worse.
 
