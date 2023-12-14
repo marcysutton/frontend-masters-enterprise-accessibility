@@ -4,6 +4,8 @@ You should get in the habit of testing UI components for accessibility every tim
 
 Here are the steps I take to manually test components and pages:
 
+<div className="styled-list">
+
 1. Use the keyboard to TAB through the page. Can you reach, operate, and see every interactive control on the screen? Can you use the arrow keys for compound widgets?
     - Note that not everything has to be interactive for screen readers (e.g. headings)!
 2. Run a browser extension like [Axe](https://www.deque.com/axe/devtools/) or [Accessibility Insights](https://accessibilityinsights.io) to surface WCAG violations and best practices. Test the heading structure with the [Web Developer](https://chrispederick.com/work/web-developer/) toolbar.
@@ -12,6 +14,8 @@ Here are the steps I take to manually test components and pages:
 4. Test with a screen reader like VoiceOver or NVDA.
 5. Check that animation, motion, and autoplaying video can be turned off with controls and Reduced Motion settings.
 6. Make note of any media in need of captions, transcripts, and other alternative content.
+
+</div>
 
 ## Bake it into the code
 

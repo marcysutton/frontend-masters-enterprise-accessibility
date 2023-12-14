@@ -11,13 +11,17 @@ When choosing a JavaScript framework or library like React, Vue, Svelte, etc., t
 4. Testing Tools
     Testing tools are super helpful to have. You can always bolt on an agnostic testing framework like Cypress. But other tooling for your particular library (like Jest, Testing Library, etc.) will prove to be essential for any long-lived web application.
 
+The _rendered_ output needs to be accessible regardless of the tooling: the stuff users experience in a browser is important. So double-check that your rendered markup follows web standards and works with keyboards, screen readers, when zoomed in, and more.
+
+## Big picture questions when evaluating tools
+
 Some other considerations when picking a library or framework:
 
 - What is the potential lifespan of your project? Will you need something super robust for years to come, or is it for a smaller project that has fewer requirements?
 - What is the funding model of the framework you’re considering? Were they just acquired, and by whom?
 - Who is maintaining it and what is the state of their issue tracker/codebase for accessibility?
 
-# Helpful Framework Accessibility APIs and Docs
+## Helpful Framework Accessibility APIs and Docs
 
 Look for accessibility APIs and components within the framework ecosystem, too. Here are some that I know about and appreciate:
 
