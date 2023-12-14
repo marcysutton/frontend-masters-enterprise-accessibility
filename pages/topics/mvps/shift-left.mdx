@@ -1,31 +1,38 @@
 # Shifting Left with Accessibility
 
-When accessibility isn’t considered in requirements gathering, design or engineering, it becomes very difficult and costly to rethink those decisions. Even more so when decisions are core to a product’s DNA, such as brand colors or creating your whole app in HTML5 Canvas.
-
 <figure className="my-6">
     <img src="/SDLC.png" alt="The Software Development Lifecycle" className="max-w-[320px] float-right ml-6" />
 </figure>
 
+When accessibility isn’t considered in planning, design, or engineering, it can become difficult and costly to redo. Even more so when decisions are core to a product’s DNA, such as brand colors or creating your whole app in HTML5 Canvas.
+
 We will have the most success when accessibility is _shifted left_ in the Software Development Life Cycle (SDLC), to earlier parts of the process. From implementation (engineering), to design. From design, to planning.
 
-The Agile diagram of the SDLC is circular since we iterate much faster on product development. But in a classic Waterfall system, it does typically resemble more of a left-to-right flow from beginning of a project to launch.
+The Agile diagram of the SDLC is circular as we iterate much faster on product development. But in a classic Waterfall system, it does typically resemble more of a left-to-right flow from beginning of a project to launch.
 
 ## What kinds of things need to be addressed in design?
 
-Developers can only fix accessibility issues _so much_. We can fiddle with colors to subtly meet contrast ratios or come up with alternative text for image assets we’ve received. But we can only go so far. QA or product management might ask, ”why is this orange not our brand color?” Or they might reject an estimate for level of effort on making a drag & drop component accessible and leave it as-is.
+Engineers can only fix accessibility issues _so much_. We can fiddle with colors to subtly meet contrast ratios or come up with alt text for some image assets.
+
+But we can only go so far. We might be assigned a drag & drop component that needs a design overhaul to have a chance at being accessible. Or QA or Product Management might ask, ”why is this orange not our brand color?”
 
 We would be better off working with our design and content strategy colleagues earlier in the process to highlight these missing requirements and include them from the start next time.
 
 ## How do you convince stakeholders?
 
-There’s a bit of an art to persuading stakeholders to care about accessibility. You first have to understand your audience and what motivates them. Do they care about legal risk and compliance? Lost revenue? Brand reputation?
+There’s an art to persuading stakeholders to care about accessibility. You first have to understand your audience and what motivates them. Do they care about legal risk and compliance? Lost revenue? Brand reputation?
 
-A strategy I personally take, in any area of software development, is to tackle large tasks in phases. If you can break a task down into smaller, achievable steps and cross them off the list, your team will see things get done. When combined with a strategy of an [accessible MVP and iterative subsequent phases](/topics/mvps/how-do-mvps), you could keep things accessible along the way.
+My strategy is to tackle large tasks in phases, including accessibility efforts. If you can break tasks down into smaller, achievable steps and cross them off the list, things will get done. When combined with a strategy of an [accessible MVP and iterative subsequent phases](/topics/mvps/how-do-mvps), you could keep things accessible along the way.
 
-A reality in many applications, however, is to implement accessibility in a phase after an inaccessible version has already launched. Some heuristics I might bring to the table when convincing leadership or my team of how to go about it could include:
+A reality in many organizations, however, is to implement accessibility long after an inaccessible version has already launched.
 
-- Accessibility impact of an issue, including WCAG success criteria and level. (Does this significantly block users?)
-- Analytics and metrics. Which browsers, screen readers, etc. are we talking about?
-- The cost of not doing it. I’m no MBA but I could take a pass on estimating the cost of a retrofit vs. doing something right from the start.
+## Tips for prioritization
+
+How would I go about convincing leadership or my team of how to tackle it? Some heuristics for prioritization could include:
+
+- **Accessibility impact of issues,** including WCAG success criteria and level. _Does this significantly block users?_
+- **Analytics and metrics.** Are core user flows impacted? Which browsers and platforms?
+- **Identify areas needing more help.** Do we need design thinking or content strategy to get this right?
+- **The cost of not doing it.** I’m no MBA but I could take a pass on estimating the cost of a retrofit vs. doing something right from the start if I broke it down into parts.
 
 We will discuss a whole lot more on [organizational skill building](/topics/org-skill-building) for accessibility later in the workshop!
