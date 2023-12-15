@@ -1,6 +1,7 @@
 {
-  "how-guidelines-fit": "How Guidelines Fit into Automation",
-  "approaches-for-testing": "Approaches for Testing",
-  "using-a-test-API": "Using an A11y Testing API",
-  "exercise-5": "Exercise 5"
+	"how-guidelines-fit": "How Guidelines Fit into Automation",
+	"approaches-for-testing": "Approaches for Testing",
+	"accessibility-and-ci": "Continuous Integration (CI)",
+	"using-a-test-API": "Using an A11y Testing API",
+	"exercise-5": "Exercise 5"
 }

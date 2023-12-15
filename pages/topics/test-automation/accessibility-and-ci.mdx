@@ -1,0 +1,31 @@
+# Continuous Integration (CI)
+
+Continuous integration is a DevOps software development practice where developers merge code together in a central repository, after which automated builds and tests are run. CI has become commonplace when code is submitted and reviewed on GitHub, GitLab, Azure DevOps, and more.
+
+Hosted CI in a nutshell: write code & tests, add an integration to source repository, enable CI builds for the project, and push code. Of course that’s a big simplification of all the steps...and some platforms are easier than others (looking at you, Azure DevOps and Jenkins).
+
+## How CI can help with accessibility testing
+
+CI that runs on every PR and build can help to encourage testing on more platforms, prevent regressions, and enable a culture of test coverage. When accessibility is part of this, it can democratize accessibility testing and awareness to more members of the team.
+
+You can also track who broke a build, including accessibility tests!
+
+## Should accessibility issues fail a build or not?
+
+Automated accessibility tests can run as part of CI checks. Should accessibility tests fail a build if issues crop up? It depends.
+
+The feature tests you write for keyboard interactions and other core functions should fail builds. You know more about a component’s feature requirements than an accessibility test API like Axe will, so you can be more targeted and effective.
+
+### Linters and CI builds
+
+Lint rules like TypeScript often fail builds. Whether accessibility lint rules should fail builds is a valid question! It’s worth experimenting with your team and figuring out a process that adds just the right amount of friction, much like snapshot testing.
+
+### Other accessibility test APIs
+
+Other accessibility test APIs are better candidates for failing in development mode or under certain conditions.
+
+Perhaps you could run test APIs like Axe on a pre-commit hook or builds for your dev environment but not for later environments where other things have been checked.
+
+By running accessibility test APIs in later build pipelines, you might risk finding issues that are irrelevant to the current sprint. Or the tooling can’t quite tell what’s a valid issue or not, something that can’t be programmatically determined. You would want that stuff to be caught much earlier in your deployment cycle.
+
+It’s better to configure automated test tooling to meet your needs in various test flows than to disable accessibility tests entirely.

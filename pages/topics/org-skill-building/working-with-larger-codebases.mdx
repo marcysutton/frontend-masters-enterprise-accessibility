@@ -1,22 +1,37 @@
 # Working with Larger Codebases
 
-In an enterprise context (or simply on a larger engineering team), you will encounter larger codebases to navigate. Here are some of my practical tips on how to make contributions that can improve accessibility in the short term and over time.
+In an enterprise context (or simply on a larger engineering team), you will encounter larger codebases to navigate. It can be tough sometimes to navigate around and gain enough context to contribute quickly.
+
+<figure className="my-6">
+    <img src="/large-codebases.png" alt="The biggest codebases in history
+" />
+</figure>
+
+Here are some of my practical tips on how to make contributions that can improve accessibility with quick wins and investments over time.
 
 ## Utilize core components with accessibility baked in
 
-When you centralize UI components for reuse, whether by building your own or using a third-party library, it can provide opportunities for accessibility (or challenges, depending on the library). Consumers of the library can take advantage of components that have been designed, engineered, and tested with accessibility baked in. Or at the very least, you can identity improvements and make them in a central location over time.
+When you centralize UI components for reuse using design systems and core component libraries, whether by building your own or using a third-party library, it can provide opportunities for accessibility (or challenges, depending on the library). 
+
+Consumers of the library can take advantage of components that have been designed, engineered, and tested with accessibility baked in. At the very least, you can make improvements in a central location over time.
 
 ## Observe conventions and don’t be afraid to suggest more accessible improvements
 
-As you read through the codebase, observe whether accessibility has been included and to what degree. Is it stronger in some areas than others? Install [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) or a similar VS Code extension to see who contributed which lines of code. Collect information about the details and gather your perspective on the bigger picture. Can you make contributions for accessibility in the scope of your current team priorities?
+As you read through the codebase, observe whether accessibility has been included and to what degree. Is it stronger in some areas than others?
+
+Install [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) or a similar VS Code extension to see who contributed which lines of code.
+
+Collect information about the details you find and gather your perspective on the bigger picture. Can you make contributions for accessibility in the scope of your current team priorities?
 
 ## Make accessibility easy to test
 
-A couple of reasons accessibility might get missed (aside from a culture that generally lacks awareness) are that code reviewers don’t know what to look out for and they might not have an easy way to test it. Push for preview URLs and Storybook stories (or similar) to make this work easier. Use a repeatable, lightweight [workflow for testing](/topics/accessible-uis/how-to-test-components/). Bake accessibility into automated tests whenever you can!
+A couple of reasons accessibility might get missed (aside from a culture that generally lacks awareness) are that code reviewers don’t know what to look out for and they might not have an easy way to test it.
+
+Push for preview URLs and Storybook stories (or similar) to make this work easier. Use a repeatable, lightweight [workflow for testing](/topics/accessible-uis/how-to-test-components/). Bake accessibility into automated tests whenever you can!
 
 ## Look for accessibility documentation including testing steps, or create some
 
-In your team or company documentation, are there any existing requirements for accessibility or testing steps? (Does your company have an accessibility team you could consult with?) If there aren’t any accessibility docs, is there a place where you could contribute some tips?
+Does your company have an accessibility team you could consult with? In your team or company documentation, are there any existing requirements for accessibility or testing steps? If there aren’t any accessibility docs, is there a place where you could contribute some tips?
 
 ## Use consistent accessibility test rules and processes
 
@@ -24,6 +39,12 @@ As accessibility matures at an organization, it will become important to test us
 
 ## Talk to your teammates / code authors to understand their approach
 
-In your info gathering stage, recall whether you spotted certain people’s names on accessible or inaccessible code. In as professional and encouraging of a way as possible, see if you can talk with those teammates or code authors to understand their approach. Are they open to more accessibility improvements? What constraints were they under when they wrote that code? This can help you identify areas for improvement, risks and challenges, or simply more understanding of how things work at your organization.
+In your info gathering stage, recall whether you spotted certain people’s names on accessible or inaccessible code.
 
-Sometimes this work isn’t pretty and can be discouraging. But other times you‘ll find that team members are enthusiastic and open to accessibility, they just didn’t know any better. This is why we want to bring a friendly attitude to our work as much as possible. My hope is that you won’t run into bad attitudes or egos, as that can be a real challenge. Take care of yourself through this work and don’t feel bad about picking your battles. Do what you can.
+In as professional and encouraging of a way as possible, see if you can talk with those teammates or code authors to understand their approach. Are they open to accessibility improvements? What constraints were they under when they wrote that code?
+
+You can identify areas for improvement, risks and challenges, or simply a better understanding of how things work at your organization.
+
+Sometimes accessibility work isn’t pretty and it can be discouraging. But other times you‘ll find that team members are enthusiastic and open to it, they just didn’t know any better.
+
+This is why we want to bring an open-minded, friendly attitude to our work as much as possible. It is important as leaders to set the right time for collaboration.
