@@ -52,12 +52,26 @@ How to set up NVDA on a Parallels Virtual Machine, which also [requires a Window
 
 ## Windows screen reader interaction modes
 
-While VoiceOver works with jumbles of key combinations (as I like to call them), NVDA and JAWS on Windows work differently. They have simpler key commands (meaning fewer keys to hold and remember), but there is a concept of [_interaction modes_](https://tink.uk/understanding-screen-reader-interaction-modes/) that you should know about.
+While VoiceOver works with plentiful multi-key combinations, NVDA and JAWS on Windows work differently. With simpler key commands, Windows screen readers also have a concept of [_interaction modes_](https://tink.uk/understanding-screen-reader-interaction-modes/) that higher-level engineers should know about.
 
-The default mode in NVDA, for example, is _Browse Mode_. This allows reading of content and cycling through headings with the H key, for example.
+<div className="float-right border-2 w-fit p-6 my-6 ml-6">
+    <h3 className="font-bold text-lg border-b-2 mb-6">A form example</h3>
+    <label>
+        <div className="mb-2"><em>First Name</em></div>
+        <input type="text" placeholder="Rainier McCheddarton" />
+    </label>
+</div>
 
-When you focus in a form input or similar interactive widget, the mode changes to _Forms Mode_ a.k.a. _Focus Mode_. This allows you to type an H in a field and have it pass that character to the form input, rather than announcing the next heading. The screen reader will go in and out of this mode automatically. You can also swap modes using the key command `NVDA` + `Space` (where `NVDA` is the `Insert` key on a Windows keyboard, unless it has been mapped to something else).
+The default mode in NVDA, for example, is **Browse Mode**. This allows reading of content and cycling through headings with the H key, for example.
 
-Certain element roles swap you in and out of these modes, such as the form controls I mentioned or content like paragraphs and DIVs.
+When you focus in a form input or contenteditable widget, the mode changes to **Forms Mode** a.k.a. **Focus Mode**. This allows you to type an `H` in a field and it will pass that character to the browser rather than announcing the next heading. The screen reader will go in and out of this mode automatically, depending on element roles.
 
-⚠️ There is also the ARIA `application` role that puts a user directly into _Focus mode_. Be _VERY_ careful about using this as you will essentially strip away Windows screen reader commands and keystrokes will be passed directly to the browser. Before going to this as a solution, test with users who rely on screen readers all the time. It’s too easy to get this wrong. So I want to give you the biggest of cautions when it comes to the `application` role.
+You can also swap modes manually using the key command `NVDA` + `Space` (where `NVDA` is the `Insert` key on a Windows keyboard, unless it has been mapped to something else).
+
+## Use role=“application” with extreme caution
+
+⚠️ There is also the ARIA `application` role that puts a user directly into _Focus mode_. Be _VERY_ careful about using this as you will essentially strip away Windows screen reader commands and keystrokes will be passed directly to the browser.
+
+Before going to this as a solution, test with users who rely on screen readers all the time. It’s too easy to get this wrong. So I want to give you the biggest of cautions when it comes to the `application` role.
+
+Read more from Marco Zehe: https://www.marcozehe.de/if-you-use-the-wai-aria-role-application-please-do-so-wisely/

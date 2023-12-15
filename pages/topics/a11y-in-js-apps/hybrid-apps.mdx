@@ -1,18 +1,26 @@
 # Hybrid App Accessibility 101
 
-There are numerous solutions for native apps generated from web code: React Native, Ionic, Flutter, Electron, and more. There’s a lot of promise in being able to leverage web developer skills and knowledge to create robust apps. Many users also prefer native apps over web apps, although it has to be said that not every app needs to be native! (There are also [Progressive Web Apps](https://web.dev/explore/progressive-web-apps), but we are focused on hybrid webviews at the moment!)
+A hybrid mobile app combines the elements of a native application developed for a specific platform like iOS or Android, and a web application built with HTML, CSS, and JavaScript. Hybrid frameworks provide tooling to write code in JavaScript and generate a native app without having to write the whole thing in languages like Swift or Java. (There are also [Progressive Web Apps](https://web.dev/explore/progressive-web-apps).)
 
-A hybrid mobile app combines the elements of a native app (an application developed for a specific platform like iOS or Android) and a web app (an app built with HTML, CSS, and JavaScriptthat can be accessed on the internet via a browser). Hybrid frameworks provide tooling to write code in JavaScript and generate a native app without having to write the whole thing in languages like Swift or Java.
+Hybrid apps present multiple avenues where accessibility issues could crop up.
+
+Webviews would have all the same requirements as websites would have, and web accessibility issues that could be tested in browsers.
+
+Meanwhile, native mobile views would have tested with mobile tooling and would have slightly different terminology. Web-views would also have to be tested inside of the native mobile app to ensure no integration issues.
 
 ## Potential access issues with hybrid web apps
 
-Like any digital application, there are common accessibility issues that could come up. Frameworks hopefully provide some guardrails with reusable components that have accessible defaults, such as buttons that output the right roles and require labels/accessible names. But that means you’re really relying on the framework to help you get accessibility right.
+Frameworks hopefully provide some guardrails with reusable components that have accessible defaults, such as buttons that output the right roles and require labels and accessible names. But that means you’re really relying on the framework to help you get accessibility right.
 
-You’re also writing code in JavaScript but targeting a native mobile device (or Electron on the desktop). That means you have to do your testing in that environment, including using a screen reader and other accessibility test tooling (which many devs simply don’t do). If you find an issue, you have to be able to translate it from the end user experience into something you can fix in your source JavaScript. There could be some difficulties there, as I know I’ve seen teams encounter with Electron.
+In hybrid apps, you’re also writing code in JavaScript but targeting a native mobile device (or Electron on the desktop). That means you have to test in that environment, including using a screen reader and other accessibility test tooling.
+
+If you find an issue, you have to translate it from what the end user experiences in the mobile app to something you can fix in your source JavaScript. There could be some complexities there, as I’ve seen teams encounter with Electron.
 
 ## What guidelines/rules apply?
 
-WCAG applies to native mobile, even though the terminology and some of the requirements will be confusing at best and won’t be relevant at worst. We need better guidelines for native mobile, but we’d still have to parse them to figure out what we can do in a hybrid development environment.
+[WCAG](https://www.w3.org/TR/WCAG22/) applies to native mobile, even though the terminology and some of the requirements are confusing at best and irrelevant at worst. There are a few [new success criteria in WCAG](https://www.deque.com/blog/what-wcag-2-2-means-for-native-mobile-accessibility/).
+
+We need better guidelines for native mobile specifically. We’d still have to parse them to figure out what we can do in a hybrid development environment.
 
 It’s best to focus on creating a good user experience. Can someone with a Bluetooth keyboard reach and operate every interactive control (sound familiar)? Can a screen reader user understand where they are on the screen and complete tasks without assistance?
 

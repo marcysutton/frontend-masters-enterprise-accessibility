@@ -2,14 +2,16 @@
 
 When choosing a JavaScript framework or library like React, Vue, Svelte, etc., there are some things to look for when it comes to accessibility:
 
-1. Support for semantic HTML and ARIA.
-    Does the framework get in your way at all when creating accessible markup? Most of the libraries have gotten very good at this -- you can include ARIA attributes with ease and many tout core accessibility features. But they also don’t necessarily discourage you from putting click events on DIVs. Just sayin’.
-2. Routing
-    Does the routing library you’ve chosen do anything for [client-side routing and accessibility](/topics/a11y-in-js-apps/client-side-routing)? There’s an unfortunate history with some of the most popular routers giving lip service to accessibility but doing nothing about it. This has been rough enough in my experience to recommend multi-page apps or write your own router with the [Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api) and a polyfill.
-3. Docs/Community
-    Do a search of the docs and GitHub/etc. repos for the library. Have they handled accessibility issues openly? Is there a culture around making accessibility improvements, or have issues languished for half a decade (or been closed with no action)?
-4. Testing Tools
+<div className="styled-list">
+1. **Support for semantic HTML and ARIA.**<br/>
+    Does the framework get in your way when creating accessible markup? Most of the libraries have gotten very good at this -- you can include ARIA attributes with ease and many have accessibility features. But they also don’t necessarily discourage you from putting click events on DIVs. Just sayin’.
+2. **Routing**<br/>
+    Does your routing library do anything for [client-side routing and accessibility](/topics/a11y-in-js-apps/client-side-routing)? This has been difficult enough in my experience to recommend multi-page apps over client-side routing. But you could also check out the [Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api).
+3. **Docs and Community**<br/>
+    Do a search of the docs and code repos for the library. Have they handled accessibility issues well? Is there a culture around making accessibility improvements, or have issues languished for half a decade (or been closed with no action)?
+4. **Testing Tools**<br/>
     Testing tools are super helpful to have. You can always bolt on an agnostic testing framework like Cypress. But other tooling for your particular library (like Jest, Testing Library, etc.) will prove to be essential for any long-lived web application.
+</div>
 
 The _rendered_ output needs to be accessible regardless of the tooling: the stuff users experience in a browser is important. So double-check that your rendered markup follows web standards and works with keyboards, screen readers, when zoomed in, and more.
 

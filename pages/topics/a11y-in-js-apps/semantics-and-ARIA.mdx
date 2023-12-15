@@ -1,18 +1,31 @@
 # Semantics & ARIA in JS Apps
 
-Anytime we’re talking about JavaScript-heavy apps, I have to plug semantic HTML and ARIA. Learn the default HTML elements and use them. I love [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) for this!
+For any discussion on JavaScript-heavy apps and accessibility, we have to include semantic HTML and ARIA.
 
-It’s pragmatic to use HTML, as it’s less functionality that you have to recreate. You probably will miss some of the features that browser components give you, anyway...have you dug into how many cool things native `<select>` elements can do? Even the [button element](/topics/accessible-uis/dont-be-a-div-button-creator) is a perfect example of working smart, not hard. Which PM wouldn’t appreciate saving time and money by using built-in functionality?
+It’s pragmatic to use HTML, as it’s less functionality for developers to recreate.
+Have you seen how many cool things native `<select>` elements can do? Even the [button element](/topics/accessible-uis/dont-be-a-div-button-creator) is a perfect example of powerful simplicity. Which manager wouldn’t appreciate saving time and money by using built-in functionality?
+
+## Create structure and use the right element for the job
+
+Learn the default HTML elements, attributes and properties. I love [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) for this!
+
+Use headings, landmarks, lists, figures, data tables and more to add semantic structure to your pages. These are essential for users of Assistive Technology to navigate and digest web page content.
+
+Use buttons and links for their intended purposes. For buttons, this means toggling UI components and being part of forms. Links are for navigation! Links also require an `href` attribute to be keyboard accessible.
+
+There are plenty of other elements, too. As tech leads, you should encourage your teammates to use HTML to its fullest potential.
 
 ## Keep the rendered output in mind
 
-Components are so easy to create in JavaScript these days. Depending on the library, you can become mentally quite separated from what gets rendered in the browser. Don’t forget that your rendered markup has to be accessible. Use standards, check your source in the browser, run a brower extension like Axe, and improve things before they ship to production.
+Components are so easy to create in JavaScript these days. Depending on the library, you can become quite detached from HTML rendering in the browser. Don’t forget that your rendered markup has to be accessible. Use web standards, check your output in the browser, run a browser extension like [Axe](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd), and improve things before they ship to production.
 
 ## Make sure you understand ARIA before using it
 
-I’ve seen developers fall into a trap of jumping straight to ARIA before exhausting default HTML. But it’s too easy to get wrong with the lacking amount of testing most teams actually do. Support isn’t always great for ARIA even if attributes existed for things, either (heard of ARIA drag & drop? it was never supported and is now deprecated.)
+Developers frequently fall into a trap of using ARIA before understanding what it does (been there myself!). It’s easy to get ARIA wrong when it isn’t tested in a screen reader.
 
-Don‘t fail the [rules of ARIA](https://www.w3.org/TR/using-aria/):
+Support isn’t always great for some ARIA attributes, either. Heard of ARIA drag & drop, `aria-grabbed`? (It was never supported and is now deprecated.)
+
+It helps to follow the [rules of ARIA](https://www.w3.org/TR/using-aria/) and test it regularly:
 
 1. If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 

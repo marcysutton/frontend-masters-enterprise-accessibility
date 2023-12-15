@@ -1,10 +1,31 @@
-# ARIA and accessible name computation
+# ARIA and Accessible Name Computation
 
-ARIA, or Accessible Rich Internet Applications, is a specification that gives us a standard set of attributes for plumbing accessibility information through HTML. ARIA includes one concept with a big impact on HTML markup: [accessible naming](https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/).
+**ARIA, or Accessible Rich Internet Applications**, is a specification for a standard set of attributes for plumbing accessibility information through HTML.
 
-HTML form controls have names. Links and buttons have names. Section elements and tables even have names, as well as other elements. (DIV elements do not.) There are multiple ways to add a name to an element (depending on the role) including text content, `aria-label` and `aria-labelledby`, and even `title` and `placeholder` in some cases. But there can only be one name. In the case of multiple attributes and child content, which thing wins?
+ARIA includes one concept with a big impact on HTML markup: [accessible naming](https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/).
 
-A document called [Accessible Name and Description Computation](https://www.w3.org/TR/accname-1.2/) standardizes this process so we don’t encounter absolute chaos across platforms. It outlines how the order should go for non-hidden elements that allow naming: `aria-labelledby`, then `aria-label`, then the `title`/`placeholder` attributes or a form `<label>` element, then certain child controls, then text content (if I read it correctly...).
+HTML form controls have names. Links and buttons have names. Section elements and tables have names, as well as other elements. (DIV elements do not.)
+
+## Writing accessible names
+
+There are multiple ways to add a name to an element depending on the role, including text content, the `<label>` form element, `aria-label` and `aria-labelledby` attributes, and even `title` and `placeholder`.
+
+But there can only be one name. In the case of multiple attributes and child content, which thing wins?
+
+## How are accessible names chosen?
+
+A document called [Accessible Name and Description Computation](https://www.w3.org/TR/accname-1.2/) standardizes this process so we don’t encounter absolute chaos across platforms.
+
+```html
+<label>
+    Zip Code
+    <input aria-label="zip-code" placeholder="00000" title="Zip code" type="number" />
+</label>
+```
+
+The Accesible Naming spec outlines how the order should go for non-hidden elements that allow naming: `aria-labelledby`, then `aria-label`, then the `title`/`placeholder` attributes or a form `<label>` element, then certain child controls, then text content (if I read it correctly).
+
+## What are accessible descriptions?
 
 Descriptions with `aria-describedby` and `title`, like names, are announced in screen readers. But they come after a slight delay and are configurable. So you can’t always count on users hearing descriptions.
 

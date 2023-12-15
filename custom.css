@@ -113,3 +113,10 @@ main a {
   column-count: 2;
   column-gap: 20px;
 }
+
+.focus-demo:focus {
+  outline: 3px solid red;
+}
+.focus-visible-demo:focus-visible {
+  outline: 3px solid red;
+}
