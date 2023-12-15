@@ -1,6 +1,23 @@
-# Focus Management Exercise
+import StackBlitz from '/components/StackBlitz';
+import CompletedReorderableList from '/completed-components/exercise-4-reordering/ReorderableList';
+import ReorderableList from '/components/ReorderableList';
 
-Manage focus in an item component on delete
+# List Reordering Exercise
 
-Add JavaScript to move focus to a persistent element in component or list
-Bonus effort: `${item} deleted!` action with an ARIA Live Region
+Let’s work on a reorderable list component where users can delete items. What should happen to their keyboard focus? Do we need to do anything for screen reader users?
+
+For a solution approach, add React code to move focus to a persistent element near the deleted one.
+
+For a bonus round: announce `${item} reordered` type of messages with an ARIA Live Region when the list updates.
+
+This exercise can be completed in this codebase, or on StackBlitz: 
+
+<div className="my-6">
+    <CompletedReorderableList />
+</div>
+
+## Remotely-hosted version
+
+<StackBlitz name="stackblitz-starters-t5k8kb" view="both" />
+
+Thank you to Flor Antara for the mouse drag & drop approach! https://dev.to/florantara/creating-a-drag-and-drop-list-with-react-hooks-4c0i
