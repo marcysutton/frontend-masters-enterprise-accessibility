@@ -8,7 +8,11 @@
 		"start": "next start",
 		"build": "next build ",
 		"lint": "next lint",
-		"test": "jest"
+		"test": "jest",
+		"e2e": "yarn run cypress:open",
+		"ci": "yarn run cypress:run",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run"
 	},
 	"dependencies": {
 		"@heroicons/react": "1.0.5",
@@ -36,6 +40,9 @@
 		"@types/node": "^20.10.4",
 		"@types/react": "^18.2.45",
 		"autoprefixer": "10.2.6",
+		"axe-core": "^4.8.2",
+		"cypress": "^13.6.1",
+		"cypress-axe": "^1.5.0",
 		"eslint": "^8.55.0",
 		"eslint-plugin-jest-dom": "^5.1.0",
 		"eslint-plugin-testing-library": "^6.2.0",
