@@ -16,18 +16,24 @@
 }
 .btn-slideshow-close {
     background-color: rgba(255,255,255,1);
+    align-items: center;
     border: none;
     color: #000;
     display: none;
     font-size: 1rem;
     font-weight: bold;
+    justify-content: center;
+    line-height: 1rem;
     right: 1em;
+    padding: 1rem;
     top: 1em;
     position: absolute;
+    text-align: center;
+    width: 1rem;
 
     span.icon:before {
         content: 'X';
-        display: block;
+        display: inline-block;
     }
 }
 .inspiration-slideshow {
@@ -45,7 +51,7 @@
         z-index: 100;
 
         .btn-slideshow-close {
-            display: block;
+            display: flex;
         }
     }
 

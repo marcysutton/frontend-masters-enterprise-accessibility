@@ -1,3 +1,4 @@
+import StackBlitz from '/components/StackBlitz';
 import CompletedSlideshow from '/completed-components/exercise-3-ARIA/Slideshow';
 import Slideshow from '/components/Slideshow';
 import { images } from '/data/images';
@@ -6,9 +7,17 @@ import { images } from '/data/images';
 
 For this exercise, let’s modify a slideshow component to work in screen readers including NVDA on Windows.
 
+This exercise can be completed in this codebase, or on StackBlitz. You can find the completed example in `/completed-components/exercise-3-slideshow/`.
+
 <div className="relative my-6">
     
     <h2 className="text-center font-bold text-xl mb-2">Inspiration Gallery</h2>
 
     <CompletedSlideshow imageData={images} />
 </div>
+
+## Remotely-hosted version
+
+You can also play with this exercise on StackBlitz:
+
+<StackBlitz name="stackblitz-starters-jx5rcb" view="both" />
