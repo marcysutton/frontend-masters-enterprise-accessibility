@@ -18,7 +18,9 @@ const FocusDemo = () => {
 						Click me
 					</div>
 				</div>
-				<figcaption className="italic">Wrapper `div[tabIndex="-1"]` with :focus</figcaption>
+				<figcaption className="italic">
+					Wrapper <code>div[tabIndex=&ldquo;-1&rdquo;]</code> with :focus
+				</figcaption>
 			</figure>
 			<figure>
 				<div>
@@ -33,7 +35,9 @@ const FocusDemo = () => {
 						Click me too
 					</div>
 				</div>
-				<figcaption className="italic">Wrapper `div[tabIndex="-1"]` with :focus-visible</figcaption>
+				<figcaption className="italic">
+					Wrapper <code>div[tabIndex=&ldquo;-1&rdquo;]</code> with :focus-visible
+				</figcaption>
 			</figure>
 		</div>
 	);

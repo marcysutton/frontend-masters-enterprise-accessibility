@@ -3,7 +3,7 @@ import * as ReactAriaLiveAnnouncer from '@react-aria/live-announcer';
 
 const itemData = ['Paddle Boards', 'Bikes', 'Skis'];
 
-const ReorderableListItem = React.forwardRef(({ name, index, callbackFn, ...props }, ref) => {
+const ReorderableListItem = React.forwardRef(function ReorderableListItem({ name, index, callbackFn, ...props }, ref) {
 	return (
 		<li
 			data-position={index}

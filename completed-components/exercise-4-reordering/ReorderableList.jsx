@@ -47,7 +47,7 @@ const ReorderableList = () => {
 	const [items, setItems] = React.useState(itemData);
 
 	const [isEditing, setIsEditing] = React.useState(false);
-	const [isReordering, setIsReordering] = React.useState(false);
+	const [isReordering, setIsReordering] = React.useState(initialState);
 
 	const listButtonRefs = React.useRef([]);
 
