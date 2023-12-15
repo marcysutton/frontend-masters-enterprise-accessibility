@@ -4,6 +4,7 @@ import '../custom.css';
 import { SSRProvider } from '@react-aria/ssr';
 import '../components/reorderable-list.scss';
 import '../components/portal-switcher.scss';
+import '../components/slideshow.scss';
 
 // Shim requestIdleCallback in Safari
 if (typeof window !== 'undefined' && !('requestIdleCallback' in window)) {

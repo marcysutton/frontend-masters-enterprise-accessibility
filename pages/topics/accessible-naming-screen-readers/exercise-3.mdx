@@ -1,7 +1,14 @@
+import CompletedSlideshow from '/completed-components/exercise-3-ARIA/Slideshow';
+import Slideshow from '/components/Slideshow';
+import { images } from '/data/images';
+
 # Slideshow Exercise
 
-Test a slideshow component in VoiceOver or NVDA
+For this exercise, let’s modify a slideshow component to work in screen readers including NVDA on Windows.
 
-Include accessible naming, advanced ARIA
+<div className="relative my-6">
+    
+    <h2 className="text-center font-bold text-xl mb-2">Inspiration Gallery</h2>
 
-Test in browser DevTools to see ”which label wins” on a link/button/etc.
+    <CompletedSlideshow imageData={images} />
+</div>
