@@ -1,5 +1,4 @@
 import React from 'react';
-import * as ReactAriaLiveAnnouncer from '@react-aria/live-announcer';
 
 const itemData = ['Paddle Boards', 'Bikes', 'Skis'];
 
@@ -13,7 +12,9 @@ const ReorderableListItem = React.forwardRef(function ReorderableListItem({ name
 			onDrop={props.onDrop}
 			className={props.isReordering && props.isReordering.draggedTo === Number(index) ? 'dropArea' : ''}>
 			<span className="text">{name}</span>
-			<span className="icon-sort"></span>
+			<div className="edit">
+				<span className="icon-sort"></span>
+			</div>
 		</li>
 	);
 });
@@ -66,28 +67,6 @@ const ReorderableList = () => {
 	};
 	const itemCallbackFn = (event, itemIndex) => {
 		let messageRead = false;
-
-		// if (event.key === 'ArrowDown') {
-		//   if (itemIndex < items.length) {
-		// 	let nextIndex = itemIndex + 1
-		// 	let tmpArray = items.slice()
-		// 	tmpArray.splice(nextIndex, 0, tmpArray.splice(itemIndex, 1).pop())
-		// 	setItems(tmpArray)
-		// 	announce(`${tmpArray[nextIndex]} moved to position ${nextIndex + 1}`)
-
-		// 	listButtonRefs.current[nextIndex].focus()
-		//   }
-		// } else if (event.key === 'ArrowUp') {
-		//   if (itemIndex > 0) {
-		// 	let prevIndex = itemIndex - 1
-		// 	let tmpArray = items.slice()
-		// 	tmpArray.splice(prevIndex, 0, tmpArray.splice(itemIndex, 1).pop())
-		// 	setItems(tmpArray)
-		// 	announce(`${tmpArray[prevIndex]} moved to position ${prevIndex + 1}`)
-
-		// 	listButtonRefs.current[prevIndex].focus()
-		//   }
-		// }
 	};
 
 	React.useEffect(() => {

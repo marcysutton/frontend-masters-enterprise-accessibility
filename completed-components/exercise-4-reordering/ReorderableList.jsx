@@ -10,7 +10,7 @@ const initialState = {
 	updatedOrder: [],
 };
 
-const ReorderableListItem = React.forwardRef(({ name, index, callbackFn, ...props }, ref) => {
+const ReorderableListItem = React.forwardRef(function ReorderableListItem({ name, index, callbackFn, ...props }, ref) {
 	const handleKeyDown = (event) => {
 		if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
 			event.preventDefault();
@@ -144,10 +144,7 @@ const ReorderableList = () => {
 				<span className="editingText">Exit edit mode</span>
 				<span className="defaultText">Edit gear list</span>
 			</button>
-			<ul
-				className="sortable-list"
-				aria-roledescription="Sortable List"
-				role={`${isEditing ? `application` : `group`}`}>
+			<ul className="sortable-list" aria-roledescription="Sortable List" role={`${isEditing ? `application` : `list`}`}>
 				{items.map((item, index) => {
 					return (
 						<ReorderableListItem
