@@ -27,11 +27,11 @@ describe('Portal Switcher', () => {
 
 		await userEvent.type(toggleButton, '{enter}');
 
-		const brokerLink = await screen.getByRole('link', { name: /Broker Portal/ });
+		waitFor(async () => await screen.getByRole('link', { name: /Broker Portal/ }));
 
-		await expect(brokerLink).toBeVisible();
+		waitFor(async () => await expect(screen.getByRole('link', { name: /Broker Portal/ })).toBeVisible());
 
-		await userEvent.type(brokerLink, '{escape}');
+		waitFor(async () => userEvent.type(screen.getByRole('link', { name: /Broker Portal/ }), '{escape}'));
 
 		waitFor(async () => {
 			await expect(toggleButton).toHaveFocus();

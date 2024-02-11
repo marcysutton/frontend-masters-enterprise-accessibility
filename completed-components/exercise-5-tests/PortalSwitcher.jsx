@@ -21,7 +21,7 @@ const PortalSwitcher = ({ ...props }) => {
 		}
 	};
 	return (
-		<div className={'portal-switcher'} {...props} data-test-id="portal-switcher">
+		<div className={'portal-switcher'} {...props} data-testid="portal-switcher">
 			<div
 				onKeyDown={(event) => escapeKeyHandler(event)}
 				onMouseEnter={() => setIsChangePortalShowing(true)}
@@ -34,7 +34,7 @@ const PortalSwitcher = ({ ...props }) => {
 						alt="Insurance Company"
 					/>
 					<div className="text-col">
-						<a href="/account/agents">Insurance Agent Portal</a>
+						<a href="/account/agents/">Insurance Agent Portal</a>
 
 						<div className="change-portal-text" data-testid="change-portal-trigger">
 							<button

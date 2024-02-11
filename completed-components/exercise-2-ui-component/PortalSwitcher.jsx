@@ -37,13 +37,13 @@ const PortalSwitcher = ({ ...props }) => {
 						<a href="/account/agents">Insurance Agent Portal</a>
 
 						<div className="change-portal-text" data-testid="change-portal-trigger">
+							Change Portal
 							<button
-								aria-label="Toggle portal menu"
+								aria-label="Toggle portal"
 								aria-expanded={isChangePortalShowing ? 'true' : 'false'}
 								className="ml-4 focus-visible:ring-2"
 								onKeyDown={(event) => toggleHandler(event)}
 								ref={toggleButton}>
-								Change Portal
 								<FaChevronDown className="icon" />
 							</button>
 						</div>
