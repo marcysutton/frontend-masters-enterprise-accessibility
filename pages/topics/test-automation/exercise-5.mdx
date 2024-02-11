@@ -3,18 +3,42 @@ import PortalSwitcher from '/components/PortalSwitcher';
 
 # Testing Exercise
 
-Let’s write some tests for our Portal Switcher component with Jest and Testing Library. We’ll also identify some potential test cases for other tools, including Cypress.
+Let’s write some automated tests for our Portal Switcher component with Jest and Testing Library. You can also write tests for other tools, including Cypress.
 
-Here is the component once again. You can find this exercise in the `completed-components/exercise-5-tests` directory.
+Here is the component once again. You can find this exercise in the `completed-components/exercise-5-tests` directory and [on GitHub](https://github.com/marcysutton/frontend-masters-enterprise-accessibility/tree/main/completed-components/exercise-5-tests).
 
 <div className="w-full bg-[#e7e5e5] min-h-[220px] mt-6">
-    <div className="box-border bg-white h-[5.25rem] pt-[1rem] pb-[2.75rem]">
-        <PortalSwitcher />
-    </div>
+	<div className="box-border bg-white h-[5.25rem] pt-[1rem] pb-[2.75rem]">
+		<PortalSwitcher />
+	</div>
 </div>
 
-## Remotely-hosted version
+## Test Suggestions
 
-You can play around with this exercise again locally or on StackBlitz:
+Here are some suggestions for automated accessibility tests. Try to implement them / make them pass by fixing the Portal Switcher code.
 
-<StackBlitz name="stackblitz-starters-31bhpt" view="both" />
+Unit testing with Jest and Testing Library:
+
+```js
+it('toggles the portal switcher with the keyboard', async () => {
+	// find elements
+	const toggleButton = screen.getByRole('button', { name: /Toggle portal menu/ });
+
+	// call userEvent for keyboard events
+
+	// assert that the component responds to events with
+	// focus, ARIA states, text in the document, etc.
+});
+```
+
+Testing with [Cypress-Axe](https://github.com/component-driven/cypress-axe) involves writing test cases in the `cypress/e2e` directory:
+
+```js
+it('should have no accessibility violations', () => {
+	cy.checkA11y({
+		exclude: ['div#portal-root'],
+	});
+
+	// check output in the browser console
+});
+```
